@@ -1,0 +1,37 @@
+
+// Make a button look and behave like a link
+.btn-link {
+  border-color: transparent;
+  &:active,
+  &.active {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: transparent;
+      border-color: transparent;
+      .box-shadow(none);
+    }
+  }
+}
+
+.btn-no-bordered {
+  color: inherit;
+  border-color: transparent;
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    color: inherit;
+    border-color: transparent;
+    .box-shadow(none);
+    &:hover,
+    &:focus,
+    &.focus {
+      color: inherit;
+      border-color: transparent;
+      .box-shadow(none);
+    }
+  }
+}

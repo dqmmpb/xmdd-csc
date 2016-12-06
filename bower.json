@@ -1,0 +1,61 @@
+{
+  "name": "xmdd-csc",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.1",
+    "jquery": "^2.2.0",
+    "jquery.1.11.2": "jquery#1.11.2",
+    "bootstrap": "3.3.5",
+    "html5shiv": "^3.7.3",
+    "respond": "^1.4.2",
+    "font-awesome": "^4.6.3",
+    "Swiper": "swiper#^3.3.1",
+    "echarts": "^3.2.2",
+    "selectize.label": "^1.0.0",
+    "es5-shim": "^4.5.9",
+    "selectize.city": "^1.0.0",
+    "selectivizr": "1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.4",
+    "chai": "~3.4.2"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    ".babelrc",
+    ".editorconfig",
+    ".gitignore",
+    ".gitattributes",
+    "gulpfile.babel.js",
+    "package.json"
+  ],
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js",
+        "dist/fonts/**"
+      ]
+    },
+    "tkJSPinyin": {
+      "main": [
+        "src/pinyin_es5.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css",
+        "fonts/*"
+      ]
+    },
+    "es5-shim": {
+      "main": [
+        "es5-shim.js",
+        "es5-sham.js"
+      ]
+    }
+  }
+}

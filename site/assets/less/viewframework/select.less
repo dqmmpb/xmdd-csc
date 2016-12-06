@@ -1,0 +1,155 @@
+.form-control-selectize-focus(@color: @input-border-focus) {
+  @color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
+  &:focus, &.focus {
+    border-color: @color;
+    outline: 0;
+    .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{color-rgba}");
+  }
+}
+
+.form-control-selectize-droupdown-focus(@color: @input-border-focus) {
+  @color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
+  border-color: @color;
+  .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{color-rgba}");
+}
+
+.selectize-input {
+  .box-shadow(none);
+  height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: @padding-base-vertical @padding-base-horizontal;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  border-radius: 0;
+  display: block;
+
+  &.focus {
+    .box-shadow(none);
+  }
+
+  &.dropdown-active {
+    border-radius: 0;
+  }
+}
+
+.selectize-dropdown [data-selectable], .selectize-dropdown .optgroup-header {
+  padding: (@padding-base-vertical - 1px) @padding-base-horizontal;
+}
+
+.selectize-input {
+  font-size: 0;
+  & > * {
+    vertical-align: middle;
+  }
+  & .item {
+    font-size: @font-size-base;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  & input {
+    font-size: @font-size-base;
+  }
+}
+
+.selectize-dropdown {
+  font-size: @font-size-base;
+  .option {
+    white-space: nowrap;
+  }
+
+  .item {
+    font-size: @font-size-base;
+    width: 100%;
+    overflow: hidden;
+  }
+  & .active {
+    background: @select-active-bg;
+  }
+}
+
+.selectize-control.single {
+  & .selectize-input {
+    white-space: nowrap;
+    padding-right: 28px;
+    .form-control-selectize-focus();
+  }
+
+  & .selectize-input.focus + .selectize-dropdown {
+    .form-control-selectize-droupdown-focus();
+  }
+
+  & .selectize-input:after {
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    margin-top: -2px;
+    right: 10px;
+  }
+  & .selectize-input.dropdown-active:after {
+    vertical-align: middle;
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    margin-top: -3px;
+  }
+
+  font-size: 0;
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.form-control-select {
+  font-size: 0;
+  min-height: 34px;
+  border: none;
+  .box-shadow(none);
+  padding: 0;
+}
+
+.for-select {
+  font-size: @font-size-base;
+}
+
+select {
+  &.prov, &.city, &.dist {
+    display: none;
+
+    width: ~"calc((100% - 20px)/3)";
+    margin-right: 10px;
+
+    &.last {
+      width: ~"calc((100% - 20px)/3)";
+      margin-right: 0;
+    }
+  }
+}
+
+.form-control-select {
+  & select {
+    display: none;
+  }
+}
+
+.selectize-control {
+  &.prov, &.city, &.dist {
+    width: ~"calc((100% - 20px)/3)";
+    margin-right: 10px;
+
+    /*&.last {
+      width: ~"calc((100% - 20px)/3)";
+      margin-right: 0;
+    }*/
+  }
+  &.dist {
+    margin-right: 0;
+  }
+}
+
+
+.input-select-w100 {
+  width: 100%;
+}

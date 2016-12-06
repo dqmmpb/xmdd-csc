@@ -1,0 +1,56 @@
+---
+layout: login
+title: 登陆
+---
+<div class=xmdd-content>
+    <div class=xmdd-content-left>
+
+    </div>
+    <div class=xmdd-content-login>
+        <div class=xmdd-login-inner>
+            <form action=login_submit method=get accept-charset=utf-8 class="login-form">
+                <div>
+                    <h5>欢迎来到{{ site.name }}客服管理系统</h5>
+                    <hr>
+                    <div class="alert alert-danger login-alert-danger login-error">
+                      <span class="glyphicon glyphicon-plus-sign alert-img" aria-hidden="true" ></span>
+                      请输入登录名！
+                    </div>
+                    <div class="form-group ">
+                        <div class="name-forget">
+                            忘记登录名？
+                        </div>
+                        <label for="">
+                            <div class="name-left">
+                                登录名：
+                            </div>
+                        </label>
+                        <input type="" name="" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <div class="name-forget">
+                            忘记登录密码？
+                        </div>
+                        <label for="">
+                            <div class="name-left">
+                                登录密码：
+                            </div>
+                        </label>
+                        <input type="" name="" class="form-control">
+                    </div>
+                    <div class="form-group form-group-code" style="" id="codediv">
+                    <div class="input-group input-group-code">
+                      <input type="text" id="code" name="code" placeholder="验证码" class="form-control required" data-msg-required="请输入验证码" aria-required="true">
+                      <span class="input-group-addon"> <img id="verifyCode" onclick="changeImgCode()" src="/paacustomer/auth/imgcode?timestamp=1467958584802" style="width: 80px;height:100%;border:none;">
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block btn-primary home-log-signup-action">登录</button>
+                </div>
+        </div>
+        </form>
+    </div>
+</div>
+</div>

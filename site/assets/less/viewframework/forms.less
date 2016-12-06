@@ -1,0 +1,53 @@
+
+.span-variant(@color) {
+  color: @color;
+}
+
+.span-primary {
+  .span-variant(@span-primary-color);
+}
+
+.span-success {
+  .span-variant(@span-success-color);
+}
+
+.span-info {
+  .span-variant(@span-info-color);
+}
+
+.span-warning {
+  .span-variant(@span-warning-color);
+}
+
+.span-danger {
+  .span-variant(@span-danger-color);
+}
+
+.input-group-addon-default {
+  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+.input-group-addon-primary {
+  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+// Success appears as green
+.input-group-addon-success {
+  .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+// Info appears as blue-green
+.input-group-addon-info {
+  .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+}
+// Warning appears as orange
+.input-group-addon-warning {
+  .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+// Danger and error appear as red
+.input-group-addon-danger {
+  .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
+
+.control-label.nowrap {
+  white-space: nowrap;
+  padding-right: 0;
+}
+

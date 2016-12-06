@@ -1,0 +1,39 @@
+/*@html-min-width: 950px;
+html, body, .navbar-default {
+  min-width: @html-min-width;
+}*/
+/*
+i.icon-checkbox {
+  behavior: url('http://192.168.1.105:9000/assets/pie/PIE.htc');
+}*/
+
+.@{prefix}-body {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  bottom: 0;
+  overflow-x:hidden;
+/*  background-color: @bg;*/
+}
+
+@mt-px: 15;
+@mt-step: 5;
+.m(@index) when (@index <= @mt-px) { // terminal
+  .mt-@{index} {
+    margin-top: unit(@index,px);
+  }
+  .mr-@{index} {
+    margin-right: unit(@index,px);
+  }
+
+  .mb-@{index} {
+    margin-bottom: unit(@index,px);
+  }
+
+  .ml-@{index} {
+    margin-left: unit(@index,px);
+  }
+  .m((@index + @mt-step));
+}
+.m(5);
+

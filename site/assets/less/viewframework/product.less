@@ -1,0 +1,162 @@
+
+.product {
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+}
+
+.@{prefix}-sidebar-@{mini} .product {
+  left: @sidebar-width-mini;
+}
+
+.@{prefix}-sidebar-@{full} .product {
+  left: @sidebar-width-full;
+}
+
+.product {
+
+  .navbar-search {
+
+    background: transparent;
+    border: none;
+
+    & .container-fluid {
+      @media (min-width: @grid-float-breakpoint) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    & .navbar-form {
+      border-top: none;
+      border-bottom: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 10px 0;
+
+      @media (min-width: @screen-sm-min) {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 10px;
+        margin-bottom: 0;
+
+        .form-group {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+  }
+
+  .breadcrumb {
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    border-radius: 0;
+  }
+
+  .form-control {
+    border-radius: 0;
+  }
+
+  .input-group-addon {
+  }
+
+  .form-control-textarea {
+    height: auto;
+  }
+
+  .input-group-addon {
+    border-radius: 0;
+  }
+
+  /*.label {
+    border-radius: 0;
+  }*/
+  /*.nav > li > a {
+    border-radius: 0;
+  }*/
+
+  .pagination-container {
+    .pagination-info {
+     /* padding-left: 0;
+      padding-right: 0;*/
+    }
+  }
+
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+
+  .panel {
+    margin-bottom: 10px;
+  }
+
+  .selectize-input {
+    & .item {
+      font-size: @font-size-base;
+    }
+    & input {
+      font-size: @font-size-base;
+    }
+  }
+
+  .selectize-dropdown {
+    font-size: @font-size-base;
+    .item {
+      font-size: @font-size-base;
+    }
+  }
+
+  .panel-body-map {
+    padding: 0;
+    position: relative;
+    .map-container {
+      min-height: 314px;
+    }
+
+    .amap-logo, .amap-copyright {
+      display: none !important;
+    }
+
+    .map-search-info {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      bottom: 10px;
+      width: 200px;
+      .amap_lib_placeSearch {
+        height: 100%;
+        .amap_lib_placeSearch_list {
+          height: ~"calc(100% - 26px)";
+          ul {
+            height: 100%;
+            overflow-y: auto;
+          }
+
+          .poi-title {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+        }
+
+        .amap_lib_placeSearch_page {
+          margin-top: 0;
+        }
+
+      }
+    }
+  }
+
+  .form-control-select-w100 {
+    min-width: 104px;
+  }
+
+}
+

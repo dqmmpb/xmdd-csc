@@ -1,0 +1,14 @@
+# Meta data
+name:         小马达达客服管理系统
+authors:      alphabeta
+description:  专注服务您的爱车
+version:      0.1.0
+keywords:     小马达达
+# Dependencies
+highlighter:  rouge
+
+# Permalinks
+permalink: none
+
+# Server
+source:       site/portal

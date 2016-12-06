@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% include header.html %}
+</head>
+<body>
+{% include navbar.html %}
+
+<div class="viewframework-body viewframework-sidebar-mini">
+  {% include sidebar.html %}
+  <div class="product">
+    {{ content }}
+  </div>
+</div>
+
+{% include footer.html %}
+</body>
+</html>

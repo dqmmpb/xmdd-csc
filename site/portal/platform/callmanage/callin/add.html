@@ -1,0 +1,197 @@
+---
+layout: default
+category: 话务管理
+title: 呼入管理
+---
+<div class="content">
+  <ol class="breadcrumb">
+    <li><a href="/platform/dashboard.html">我的工作台</a></li>
+    <li>{{ page.category }}</li>
+    <li><a href="/platform/callmanage/callin/callin.html">{{ page.title }}</a></li>
+    <li class="active">新增呼入</li>
+  </ol>
+
+  <div class="navbar-tools">
+    <div class="btn-group" role="group" aria-label="">
+      <a href="/platform/callmanage/callin/callin.html" class="btn btn-default btn-info"><i class="fa fa-fw fa-chevron-left"></i> 返回</a>
+    </div>
+    <div class="btn-group" role="group" aria-label="">
+      <a class="btn btn-default btn-success"><i class="fa fa-fw fa-save"></i> 保存</a>
+      <a class="btn btn-default btn-danger"><i class="fa fa-fw fa-mail-forward"></i> 放弃</a>
+    </div>
+    <div class="btn-group pull-right" role="group" aria-label="">
+      <a class="btn btn-default btn-info"><i class="fa fa-refresh"></i> 刷新</a>
+      <a class="btn btn-default btn-primary"><i class="fa fa-cog"></i> 配置</a>
+    </div>
+  </div>
+<!--
+
+  <nav class="navbar navbar-default navbar-search">
+    <div class="container-fluid">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input id="phone" name="phone" class="form-control" maxlength="11" placeholder="客户手机">
+        </div>
+        <div class="form-group">
+          <input id="nickname" name="nickname" class="form-control" maxlength="20" placeholder="客户昵称">
+        </div>
+        <div class="form-group">
+          <input id="licenceNumber" name="licenceNumber" class="form-control" maxlength="7" placeholder="车牌号">
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-default btn-warning"><i class="fa fa-fw fa-search sr-only"></i> 查询</button>
+        </div>
+      </form>
+    </div>
+  </nav>
+-->
+
+  <div class="row mt-10">
+    <div class="col-md-6">
+      <div class="panel panel-default panel-csc">
+        <div class="panel-heading">
+          <div class="panel-title">呼入信息</div>
+        </div>
+        <div class="panel-body">
+          <form class="form form-horizontal">
+            <div class="form-group">
+              <label for="callin_phone" class="col-sm-2 control-label nowrap"><span class="span-danger">*</span>呼入手机:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="callin_phone" placeholder="呼入手机">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="callin_username" class="col-sm-2 control-label nowrap">用户账号:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="callin_username" placeholder="用户账号">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="callin_nickname" class="col-sm-2 control-label nowrap">昵称/姓名:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="callin_nickname" placeholder="昵称/姓名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="callin_license" class="col-sm-2 control-label nowrap">车牌:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="callin_license" placeholder="车牌">
+              </div>
+            </div>
+            <div class="form-group form-select-group">
+              <label for="callin_area" class="col-sm-2 control-label nowrap">所在区域:</label>
+              <div class="col-sm-10">
+                <div class="form-control-select">
+                  <div class="select-group"></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="callin_area" placeholder="详细地址">
+                  <a class="input-group-addon input-group-addon-info" id="geolocation"><i class="fa fa-fw fa-map-marker"></i></a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">地图</div>
+        </div>
+        <div class="panel-body panel-body-map">
+          <div id="map-container" class="map-container"></div>
+          <div id="map-search-info" class="map-search-info"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">接线信息</div>
+        </div>
+        <div class="panel-body">
+          <form class="form form-horizontal">
+            <div class="form-group">
+              <label for="incoming_channel" class="col-sm-2 control-label nowrap"><span class="span-danger">*</span>呼入渠道:</label>
+              <div class="col-sm-10">
+                <div class="form-control-select">
+                  <select class="input-select input-select-w100" required id="incoming_channel" placeholder="呼入渠道">
+                    <option value="400-7111111">400-7111111</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="incoming_line" class="col-sm-2 control-label nowrap"><span class="span-danger">*</span>呼入线路:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="incoming_line" placeholder="呼入线路">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="user_account" class="col-sm-2 control-label nowrap"><span class="span-danger">*</span>接线员:</label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <input type="text" class="form-control" disabled id="user_account" placeholder="接线员" value="2201-邓启明">
+                  <a class="input-group-addon input-group-addon-success"><i class="fa fa-fw fa-search"></i></a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">呼入内容</div>
+        </div>
+        <div class="panel-body">
+          <form class="form form-horizontal">
+            <div class="form-group">
+              <label for="service_type" class="col-sm-2 control-label nowrap"><span class="span-danger">*</span>服务项目:</label>
+              <input type="hidden" class="form-control hidden" id="service_type" placeholder="服务项目">
+              <div class="col-sm-10">
+                <div class="form-control-label nowrap">
+                  <div class="label-group" data-placeholder="请填写服务项目中不存在的其他类型"></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="remark" class="col-sm-2 control-label nowrap">备注:</label>
+              <div class="col-sm-10">
+                <textarea class="form-control form-control-textarea" rows="3" id="remark" placeholder="请填写备注信息"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <label class="label-checkbox label-checkbox-danger checkbox-lg">
+                  <input type="checkbox" name="checkbox">
+                  <i class="icon-checkbox"></i>
+                  <div class="text-checkbox">继续跟踪</div>
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="btn-group" role="group" aria-label="">
+    <a class="btn btn-default btn-success"><i class="fa fa-fw fa-save"></i> 保存</a>
+  </div>
+
+</div>
+
+<!-- build:js /assets/scripts/callin-add.js -->
+<script src="/assets/scripts/callin-add.js"></script>
+<!-- endbuild -->

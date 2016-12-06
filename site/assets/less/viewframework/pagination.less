@@ -1,0 +1,59 @@
+
+.pagination-info-size(@padding-vertical; @padding-horizontal; @font-size; @line-height) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+}
+
+
+.pagination-container {
+
+  .clearfix();
+
+  .pagination-info {
+    display: inline-block;
+    padding: @padding-base-vertical @padding-base-horizontal;
+    line-height: @line-height-base;
+    border: 1px solid transparent;
+  }
+
+  .pagination {
+    margin: 0;
+
+/*    & > .active > a {
+      border-color: @pagination-border !important;
+    }*/
+  }
+
+}
+
+
+// Sizing
+// --------------------------------------------------
+
+// Large
+.pagination-container-lg {
+  .pagination-info {
+    .pagination-info-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large);
+  }
+  .pagination {
+    .pagination-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+  }
+}
+
+// Small
+.pagination-container-sm {
+  .pagination-info {
+    .pagination-info-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small);
+  }
+  .pagination {
+    .pagination-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+  }
+}
+/*
+
+.table-container {
+  & table {
+    background: #fff;
+  }
+}*/
